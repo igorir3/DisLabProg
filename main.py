@@ -51,8 +51,6 @@ def main(stdscr):
 
     inputtextstr = ''
 
-    outputfile = open('output.log', 'w+')
-
     while True:
 
         #Чтобы не обновлять основное окно, обновляем все второстепенные
@@ -91,7 +89,8 @@ def main(stdscr):
         response = SER.readline() # Читаем ввод
         if response != b'': # Если ввод пустой, игнорируем
             textlist.append(response.decode().rstrip())
-            outputfile.write(response.decode().rstrip() + '\n')
+            with open('output.log', 'a+') as outputfile:
+                outputfile.write(response.decode().rstrip() + '\n')
 
 
         if len(textlist) > lines - 2: # Если массив textlist больше чем можно отобразить в окне, удаляем первое значение
