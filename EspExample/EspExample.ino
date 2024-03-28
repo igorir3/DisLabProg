@@ -68,10 +68,10 @@ void handleNewMessages(int numNewMessages) {
         byte state = Wire.read();     // принять байт как символ
         Serial.print(state);          // напечатать символ
       }
-      if (state == 97){
+      if (state == byte(97)){
         bot.sendMessage(chat_id, "LED is ON", "");
       }
-      else if (state == 98){
+      else if (state == byte(98)){
         bot.sendMessage(chat_id, "LED is OFF", "");
       }
     }
