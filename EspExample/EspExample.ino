@@ -6,12 +6,12 @@
 #include <ArduinoJson.h>
  
 // Вставьте сюда свои учетные данные сети
-const char* ssid = "TP-Link_1025";
-const char* password = "22RjiX22";
+const char* ssid = " ";
+const char* password = " ";
 byte state;
  
 // Запускаем бот
-#define BOTtoken "6922838545:AAEmSeyDR_x5_UjOm78NQgYdEDnjzrxAFoo"  // Вставляем токен бота.
+#define BOTtoken " "  // Вставляем токен бота.
  
 // Используйте @myidbot, чтобы получить ID пользователя или группы
 // Помните, что бот сможет вам писать только после нажатия
