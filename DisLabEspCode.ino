@@ -80,7 +80,7 @@ void handleNewMessages(int numNewMessages) {
     if (text == "/getdata") {
       Serial.println(" ")
       Serial.println("=== DATA COMMAND! ===")
-      for (int x=1; x<=7; x++){
+      for (int x=1; x<=8; x++){
         Serial.print(x)
         Wire.beginTransmission(44);
         Wire.write(x);             // отправить байт значения  
@@ -88,7 +88,13 @@ void handleNewMessages(int numNewMessages) {
         Wire.requestFrom(44, 2);
         while(Wire.available())     // ведомое устройство может послать меньше, чем запрошено
         { 
-          int data = Wire.read();     // принять байт как символ
+          if x < 7{
+           float data = Wire.read();
+          }
+          else{
+           long data = Wire.read();
+          }
+               // принять байт как символ
         }
         Serial.print(" GET:")
         Serial.println(data)
